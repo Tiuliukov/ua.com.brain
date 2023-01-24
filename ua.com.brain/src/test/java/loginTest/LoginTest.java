@@ -19,7 +19,7 @@ public class LoginTest {
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        webDriver.get("https://brain.com.ua/");
+        webDriver.get("https://brain.com.ua/ukr/");
 
         WebElement openLoginPopupButton = webDriver.findElement(By.xpath(".//button[@class = 'auth-popup-button']"));
         openLoginPopupButton.click();
