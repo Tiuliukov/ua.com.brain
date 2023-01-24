@@ -1,1 +1,35 @@
-#1
+#1 Successful login test.
+
+Preconditions: Create user Login:'+38 (098) 501-97-80' Password:'36075354'.
+STR:
+- Open 'https://brain.com.ua/ukr/';
+- Click on the 'Login' button;
+- Enter Username '+38 (098) 501-97-80';
+- Enter Password '36075354';
+- Click on the 'Sign In' button.
+ER: User successfully logged in and proceed to Main page. 'User Panel' button is displayed.
+
+#2 Search test.
+STR:
+- Open 'https://brain.com.ua/ukr/';
+- Enter 'iPhone' in the 'Search Field';
+ER: First result include item with 'iPhone' in title.
+
+#3 Open 'Stores' page.
+STR:
+- Open 'https://brain.com.ua/ukr/';
+- Click on the 'Stores' button;
+ER: 'Stores' page is open. 'Choose City' button is displayed.
+
+#4 Open 'Product' page.
+STR:
+- Open 'https://brain.com.ua/ukr/';
+- Enter 'iPhone' in the 'Search Field';
+- Click on the item with title which include 'iPhone';
+ER: 'Product' page is open. Product title include 'iPhone'.
+
+#5 Open HelpChat popup.
+STR:
+- Open 'https://brain.com.ua/ukr/';
+- Click on the 'HelpChat' button;
+ER: Popup is opened. 'Send Message' button is displayed in the 'HelpChat' popup.

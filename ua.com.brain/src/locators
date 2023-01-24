@@ -1,1 +1,24 @@
-#MainPage
+#Header
+header.button.openLoginPopup = .//button[@class = 'auth-popup-button']
+header.button.userPanel = .//div[@class = 'user-panel-wrap js-login-popup']
+header.input.search = .//div[@class = 'header-bottom-in']//input[@class = 'quick-search-input']
+header.title.searchProduct = .//div[@class = 'qsr-block ']//div[contains(@title, 'iPhone')]
+header.button.stores = .//div[@class='header-top']//a[@href='/ukr/shops_map/']
+
+#Main
+main.button.helpChat = .//button[@class = 'bwc-chat bwc-chat-inactive']
+
+#ProductPage
+productPage.title.product = .//h1[contains(text(), 'iPhone')]
+
+#StoresPage
+stores.title = .//h1[@class='title']
+stores.button.chooseCity = .//button[@class = 'choice_city_button']
+
+#LoginPopup
+inputPhoneField = .//input[@id = 'modal-login-phone-field']
+inputUserPassword = .//input[@id = 'modal-login-password-field']
+buttonSignIn = .//div[@class = 'tab-pane active']//button[@class = 'br-login-submit']
+
+#HelpChat
+sendMessageButton = .//div[@class = 'bwc-send bwc-button']
