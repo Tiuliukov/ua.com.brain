@@ -18,6 +18,7 @@ public class HomePage extends ParentPage {
     public HomePage openHomePage(){
         try {
             webDriver.get("https://brain.com.ua/ukr/");
+            logger.info("LoginPage was opened");
         } catch (Exception e) {
             Assert.fail("Can not open Login Page" + e);
         }

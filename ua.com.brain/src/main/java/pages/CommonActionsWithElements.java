@@ -1,6 +1,7 @@
 package pages;
 
 import org.junit.Assert;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +12,7 @@ import java.time.Duration;
 
 public class CommonActionsWithElements {
     protected WebDriver webDriver;
+    Logger logger = Logger.getLogger(getClass());
     WebDriverWait webDriverWait10;
 
     public CommonActionsWithElements(WebDriver webDriver) {
