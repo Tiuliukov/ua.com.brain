@@ -1,6 +1,7 @@
 package baseTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import java.time.Duration;
 
 public class BaseTest {
     protected WebDriver webDriver;
+    Logger logger = Logger.getLogger(getClass());
     protected HomePage homePage;
     protected LoginPopup loginPopup;
     protected HeaderElement headerElement;
@@ -32,5 +34,6 @@ public class BaseTest {
     @After
     public void tearDown(){
         webDriver.quit();
+        logger.info("Browser was closed");
     }
 }
