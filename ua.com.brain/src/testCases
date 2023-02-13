@@ -1,8 +1,8 @@
 #1 Successful login test.
 
-Preconditions: Create user Login:'+38 (098) 501-97-80' Password:'36075354'.
+Preconditions: User with Login:'+38 (098) 501-97-80' Password:'36075354' was created.
 STR:
-- Open 'https://brain.com.ua/ukr/';
+- Open HomePage 'https://brain.com.ua/ukr/';
 - Click on the 'Login' button;
 - Enter Username '+38 (098) 501-97-80';
 - Enter Password '36075354';

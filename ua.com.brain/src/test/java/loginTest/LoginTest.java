@@ -11,12 +11,26 @@ public class LoginTest extends BaseTest {
                 .openHomePage()
                 .getHeaderElement()
                 .clickOnButtonLogin()
+                .checkIsLoginPopupDisplayed()
                 .fillInInputLogin(TestData.VALID_LOGIN)
                 .fillInInputPassword(TestData.VALID_PASSWORD)
                 .clickOnButtonLogin()
                 .getHeaderElement()
-                .checkIsUserSuccessfullyLoggingIn()
-                ;
+                .checkIsUserSuccessfullyLoggingIn();
     }
 
+    @Test
+    public void TC_2_invalidLogin(){
+        homePage
+                .openHomePage()
+                .getHeaderElement()
+                .clickOnButtonLogin()
+                .checkIsLoginPopupDisplayed()
+                .fillInInputLogin(TestData.INVALID_LOGIN)
+                .fillInInputPassword(TestData.INVALID_PASSWORD)
+                .clickOnButtonLogin()
+                .getHeaderElement()
+                .checkIsUserNotLoggingIn()
+                ;
+    }
 }

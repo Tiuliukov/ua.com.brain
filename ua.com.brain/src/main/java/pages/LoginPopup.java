@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +13,8 @@ public class LoginPopup extends ParentPage{
     private WebElement inputPassword;
     @FindBy(xpath = ".//*[@class = 'tab-pane active']//button[@class = 'br-login-submit']")
     private WebElement buttonLogin;
+    @FindBy(xpath = ".//*[@class = 'br-login-tabs']")
+    private WebElement loginTabs;
 
     private HeaderElement headerElement = new HeaderElement(webDriver);
 
@@ -21,6 +24,11 @@ public class LoginPopup extends ParentPage{
 
     public HeaderElement getHeaderElement() {
         return headerElement;
+    }
+
+    public LoginPopup checkIsLoginPopupDisplayed(){
+        Assert.assertTrue("Login popup is not loaded", isElementDisplayed(loginTabs));
+        return this;
     }
 
     public LoginPopup fillInInputLogin(String userLogin) {
