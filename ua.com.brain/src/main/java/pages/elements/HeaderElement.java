@@ -1,13 +1,15 @@
 package pages.elements;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.CommonActionsWithElements;
 import pages.LoginPopup;
 
 public class HeaderElement extends CommonActionsWithElements {
-    @FindBy(className = "br-th-login")
+    @FindBy(xpath = ".//*[@class = 'br-th-login ']")
     private WebElement buttonLogin;
     @FindBy(xpath = ".//*[@class = 'user-panel-button active']")
     private WebElement buttonUserPanel;
@@ -21,8 +23,18 @@ public class HeaderElement extends CommonActionsWithElements {
         return new LoginPopup(webDriver);
     }
 
+
     public HeaderElement checkIsUserSuccessfullyLoggingIn (){
-        isElementDisplayed(buttonUserPanel);
+        Assert.assertTrue("User is not logged in", isElementDisplayed(buttonUserPanel));
+        logger.info("User successfully logged In");
+        return this;
+    }
+
+
+    public HeaderElement checkIsUserNotLoggingIn(){
+        webDriverWait10.until(ExpectedConditions.visibilityOf(buttonLogin));
+        Assert.assertFalse("User is logged in", isElementDisplayed(buttonUserPanel));
+        logger.info("User is not logged In");
         return this;
     }
 }

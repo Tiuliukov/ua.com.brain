@@ -12,8 +12,8 @@ import java.time.Duration;
 
 public class CommonActionsWithElements {
     protected WebDriver webDriver;
-    Logger logger = Logger.getLogger(getClass());
-    WebDriverWait webDriverWait10;
+    protected Logger logger = Logger.getLogger(getClass());
+    protected WebDriverWait webDriverWait10;
 
     public CommonActionsWithElements(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -25,6 +25,7 @@ public class CommonActionsWithElements {
         try {
             webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
+            logger.info("Element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }
@@ -35,23 +36,32 @@ public class CommonActionsWithElements {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
             webElement.clear();
             webElement.sendKeys(text);
-            //logger.info(text + " was inputted in to element");
+            logger.info(text + " was inputted in to element");
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }
     }
 
-    protected void isElementDisplayed (WebElement webElement) {
+    protected boolean isElementDisplayed(WebElement webElement){
         try {
-            webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
-            webElement.isDisplayed();
-        } catch (Exception e) {
-            printErrorAndStopTest(e);
+            webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
+            boolean state = webElement.isDisplayed();
+            String message;
+            if (state){
+                message = "Element is displayed";
+            } else {
+                message = "Element is not displayed";
+            }
+            logger.info(message);
+            return state;
+        }catch (Exception e){
+            logger.info("element is not displayed");
+            return false;
         }
     }
 
     protected void printErrorAndStopTest(Exception e){
-        //logger.error("Can not work with element" + e);
+        logger.error("Can not work with element" + e);
         Assert.fail("Can not work with element" + e);
     }
 }
