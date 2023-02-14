@@ -19,7 +19,7 @@ ER: First result include item with 'iPhone' in title.
 STR:
 - Open 'https://brain.com.ua/ukr/';
 - Click on the 'Stores' button;
-ER: 'Stores' page is open. 'Choose City' button is displayed.
+ER: 'Stores' page is open. Title is displayed. 'Choose City' button is displayed.
 
 #4 Open 'Product' page.
 STR:

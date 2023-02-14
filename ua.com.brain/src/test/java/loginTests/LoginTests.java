@@ -1,10 +1,10 @@
-package loginTest;
+package loginTests;
 
 import baseTest.BaseTest;
 import libs.TestData;
 import org.junit.Test;
 
-public class LoginTest extends BaseTest {
+public class LoginTests extends BaseTest {
     @Test
     public void TC_1_validLogin(){
         homePage
