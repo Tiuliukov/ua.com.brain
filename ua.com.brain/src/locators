@@ -3,7 +3,7 @@ header.button.openLoginPopup = .//button[@class = 'auth-popup-button']
 header.button.userPanel = .//div[@class = 'user-panel-wrap js-login-popup']
 header.input.search = .//div[@class = 'header-bottom-in']//input[@class = 'quick-search-input']
 header.title.searchProduct = .//div[@class = 'qsr-block ']//div[contains(@title, 'iPhone')]
-header.button.stores = .//div[@class='header-top']//a[@href='/ukr/shops_map/']
+header.button.stores = .//li[@class = 'top-menu-list-item folder'] or .//div[@class='header-top']//a[@href='/ukr/shops_map/']
 
 #Main
 main.button.helpChat = .//button[@class = 'bwc-chat bwc-chat-inactive']
