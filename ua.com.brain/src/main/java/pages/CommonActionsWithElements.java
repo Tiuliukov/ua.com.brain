@@ -2,6 +2,7 @@ package pages;
 
 import org.junit.Assert;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +15,8 @@ public class CommonActionsWithElements {
     protected WebDriver webDriver;
     protected Logger logger = Logger.getLogger(getClass());
     protected WebDriverWait webDriverWait10;
+
+    private String desiredElement = ".//*[text() = '%s']";
 
     public CommonActionsWithElements(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -57,6 +60,29 @@ public class CommonActionsWithElements {
         }catch (Exception e){
             logger.info("element is not displayed");
             return false;
+        }
+    }
+
+    protected WebElement findElementByText (String textOfElement){
+        try {
+            WebElement webElement;
+            webElement = webDriver.findElement(By.xpath(String.format(desiredElement, textOfElement)));
+            webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
+            return webElement;
+        }catch (Exception e) {
+            printErrorAndStopTest(e);
+            return null;                        //refactor null
+        }
+    }
+
+    protected void clickOnElementByText(String textOfElement){
+        try {
+            WebElement webElement = findElementByText(textOfElement);
+            webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
+            webElement.click();
+            logger.info("Element was clicked");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
         }
     }
 

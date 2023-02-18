@@ -1,9 +1,23 @@
 #Header
+heder.logo =
+header.button.chooseCity =
+header.button.stores = .//li[@class = 'top-menu-list-item folder'] or .//div[@class='header-top']//a[@href='/ukr/shops_map/']
+header.DDList.loyaltyProgram =
+header.DDListItem.b2c= .//a[@href = '/ukr/brainup/b2c']
+header.DDList.forClients =
+header.DDList.Service =
+header.button.promotions =
 header.button.openLoginPopup = .//button[@class = 'auth-popup-button']
 header.button.userPanel = .//div[@class = 'user-panel-wrap js-login-popup']
+header.DDList.Catalog =
 header.input.search = .//div[@class = 'header-bottom-in']//input[@class = 'quick-search-input']
+header.button.callMe =
+header.button.trackOrder =
+header.button.wishList =
+header.button.comparison =
+header.button.cart = .//div[@class = 'cart js-cart br-h-cart']
+
 header.title.searchProduct = .//div[@class = 'qsr-block ']//div[contains(@title, 'iPhone')]
-header.button.stores = .//li[@class = 'top-menu-list-item folder'] or .//div[@class='header-top']//a[@href='/ukr/shops_map/']
 
 #Main
 main.button.helpChat = .//button[@class = 'bwc-chat bwc-chat-inactive']
