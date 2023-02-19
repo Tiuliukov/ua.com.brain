@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 import pages.LoginPopup;
+import pages.ProductPage;
 import pages.StoresPage;
 import pages.elements.HeaderElement;
 
@@ -20,6 +21,7 @@ public class BaseTest {
     protected LoginPopup loginPopup;
     protected HeaderElement headerElement;
     protected StoresPage storesPage;
+    protected ProductPage productPage;
 
     @Before
     public void setUp(){
@@ -32,6 +34,7 @@ public class BaseTest {
         loginPopup = new LoginPopup(webDriver);
         headerElement = new HeaderElement(webDriver);
         storesPage = new StoresPage(webDriver);
+        productPage = new ProductPage(webDriver);
     }
 
     @After

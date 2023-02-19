@@ -5,10 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.B2CPage;
-import pages.CommonActionsWithElements;
-import pages.LoginPopup;
-import pages.StoresPage;
+import pages.*;
 
 public class HeaderElement extends CommonActionsWithElements {
     @FindBy(xpath = ".//*[@class = 'br-th-login ']")
@@ -19,9 +16,12 @@ public class HeaderElement extends CommonActionsWithElements {
     private WebElement buttonUserPanel;
     @FindBy(xpath = ".//li[@class = 'top-menu-list-item folder']")
     private WebElement buttonStores;
+    @FindBy(xpath = ".//div[@class = 'header-bottom-in']//input[@class = 'quick-search-input']")
+    private WebElement inputSearch;
 
     private String buttonLoyaltyProgram = "Програма лояльності";
     private String DDLLoyaltyProgramItemB2C = "Про програму лояльності";
+    private String itemInSearch = ".//div[@class = 'qsr-content']//*[text() = '%s']";
 
     public HeaderElement(WebDriver webDriver) {
         super(webDriver);
@@ -63,5 +63,15 @@ public class HeaderElement extends CommonActionsWithElements {
         Assert.assertFalse("User is logged in", isElementDisplayed(buttonUserPanel));
         logger.info("User is not logged In");
         return this;
+    }
+
+    public HeaderElement enterTextInToInputSearch(String textSeach) {
+        enterTextIntoElement(inputSearch, textSeach);
+        return this;
+    }
+
+    public ProductPage clickOnSearchResultByTitle(String title){
+        clickOnElement(String.format(itemInSearch, title));
+        return new ProductPage(webDriver);
     }
 }

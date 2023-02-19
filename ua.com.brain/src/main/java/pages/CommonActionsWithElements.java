@@ -34,6 +34,15 @@ public class CommonActionsWithElements {
         }
     }
 
+    protected void clickOnElement (String xpath){
+        try {
+            WebElement webElement = webDriver.findElement(By.xpath(xpath));
+            clickOnElement(webElement);
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
     protected void enterTextIntoElement (WebElement webElement, String text){
         try {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
