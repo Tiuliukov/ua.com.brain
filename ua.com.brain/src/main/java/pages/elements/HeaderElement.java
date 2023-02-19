@@ -18,6 +18,8 @@ public class HeaderElement extends CommonActionsWithElements {
     private WebElement buttonStores;
     @FindBy(xpath = ".//div[@class = 'header-bottom-in']//input[@class = 'quick-search-input']")
     private WebElement inputSearch;
+    @FindBy(xpath = ".//*[@class = 'actions-item actions-wish']")
+    private WebElement buttonWishList;
 
     private String buttonLoyaltyProgram = "Програма лояльності";
     private String DDLLoyaltyProgramItemB2C = "Про програму лояльності";
@@ -73,5 +75,10 @@ public class HeaderElement extends CommonActionsWithElements {
     public ProductPage clickOnSearchResultByTitle(String title){
         clickOnElement(String.format(itemInSearch, title));
         return new ProductPage(webDriver);
+    }
+
+    public WishListPage clickOnButtonWishList() {
+        clickOnElement(buttonWishList);
+        return new WishListPage(webDriver);
     }
 }
