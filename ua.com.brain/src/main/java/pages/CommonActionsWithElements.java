@@ -27,8 +27,9 @@ public class CommonActionsWithElements {
     protected void clickOnElement (WebElement webElement){
         try {
             webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
+            String elementName = getElementName(webElement);
             webElement.click();
-            logger.info("Element was clicked");
+            logger.info(elementName + " element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }
@@ -46,9 +47,10 @@ public class CommonActionsWithElements {
     protected void enterTextIntoElement (WebElement webElement, String text){
         try {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
+            String elementName = getElementName(webElement);
             webElement.clear();
             webElement.sendKeys(text);
-            logger.info(text + " was inputted in to element");
+            logger.info(text + " was inputted in to element " + elementName);
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }
@@ -59,10 +61,11 @@ public class CommonActionsWithElements {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
             boolean state = webElement.isDisplayed();
             String message;
+            String elementName = getElementName(webElement);
             if (state){
-                message = "Element is displayed";
+                message = elementName + " element is displayed";
             } else {
-                message = "Element is not displayed";
+                message = elementName + " element is not displayed";
             }
             logger.info(message);
             return state;
@@ -92,6 +95,14 @@ public class CommonActionsWithElements {
             logger.info("Element was clicked");
         } catch (Exception e) {
             printErrorAndStopTest(e);
+        }
+    }
+
+    private String getElementName(WebElement webElement){
+        try {
+            return webElement.getAccessibleName();
+        } catch (Exception e) {
+            return "";
         }
     }
 

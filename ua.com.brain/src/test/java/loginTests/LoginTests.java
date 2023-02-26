@@ -10,7 +10,7 @@ public class LoginTests extends BaseTest {
         homePage
                 .openHomePage()
                 .getHeaderElement()
-                .clickOnButtonLogin()
+                .clickOnButtonLoggingIn()
                 .checkIsLoginPopupDisplayed()
                 .fillInInputLogin(TestData.VALID_LOGIN)
                 .fillInInputPassword(TestData.VALID_PASSWORD)
@@ -24,7 +24,7 @@ public class LoginTests extends BaseTest {
         homePage
                 .openHomePage()
                 .getHeaderElement()
-                .clickOnButtonLogin()
+                .clickOnButtonLoggingIn()
                 .checkIsLoginPopupDisplayed()
                 .fillInInputLogin(TestData.INVALID_LOGIN)
                 .fillInInputPassword(TestData.INVALID_PASSWORD)
