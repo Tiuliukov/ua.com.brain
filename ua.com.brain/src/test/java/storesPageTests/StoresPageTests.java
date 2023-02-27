@@ -10,6 +10,7 @@ public class StoresPageTests extends BaseTest {
                 .openHomePage()
                 .getHeaderElement()
                 .clickOnButtonStores()
-                .checkIsRedirectedToStoresPage();
+                .checkIsRedirectedToStoresPage()
+        ;
     }
 }

@@ -13,7 +13,7 @@ public class WishListUserLoggedInTests extends BaseTest {
         homePage
                 .openHomePage()
                 .getHeaderElement()
-                .clickOnButtonLogin()
+                .clickOnButtonLoggingIn()
                 .checkIsLoginPopupDisplayed()
                 .fillInInputLogin(TestData.VALID_LOGIN)
                 .fillInInputPassword(TestData.VALID_PASSWORD)

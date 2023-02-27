@@ -6,16 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class StoresPage extends ParentPage{
-    @FindBy(id = ".//h1[@class='title']")
+    @FindBy(xpath = ".//h1[@class='title']")
     private WebElement storesPageTitle;
-    @FindBy(id = ".//button[@class = 'choice_city_button']")
+    @FindBy(xpath = ".//button[@class = 'choice_city_button']")
     private WebElement buttonChooseCity;
 
     public StoresPage(WebDriver webDriver) {
         super(webDriver);
     }
 
+    @Override
+    String getRelativeURL() {
+        return "/shops_map/#[a-zA-Z0-9]*";
+    }
+
     public StoresPage checkIsRedirectedToStoresPage(){
+        checkURLWithPattern();
         Assert.assertTrue("Stores page title is not displayed", isElementDisplayed(storesPageTitle));
         Assert.assertTrue("'Choose city' button is not displayed on 'Stores' page", isElementDisplayed(buttonChooseCity));
         return this;

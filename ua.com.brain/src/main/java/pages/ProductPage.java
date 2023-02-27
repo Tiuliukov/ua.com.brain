@@ -14,10 +14,19 @@ public class ProductPage extends ParentPage{
     @FindBy(xpath = ".//*[@class = 'br-del-pr']//button[@class = 'like-link']")
     private WebElement buttonWishList;
 
+    @FindBy(xpath = ".//*[@class = 'container br-container-main br-container-prt']")
+    private WebElement productContent;
+
     private HeaderElement headerElement = new HeaderElement(webDriver);
 
     public ProductPage(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    @Override
+    String getRelativeURL() {
+        String relativeUrl = "/" + productContent.getAttribute("data-slug") + ".html";
+        return relativeUrl;
     }
 
     public HeaderElement getHeaderElement() {
@@ -25,6 +34,7 @@ public class ProductPage extends ParentPage{
     }
 
     public ProductPage checkIsRedirectedToProductPage() {
+        checkURL();
         Assert.assertTrue("Product page is not loaded", isElementDisplayed(productCode));
         return this;
     }

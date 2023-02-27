@@ -9,6 +9,11 @@ public class HomePage extends ParentPage {
         super(webDriver);
     }
 
+    @Override
+    String getRelativeURL() {
+         return "/";
+    }
+
     private HeaderElement headerElement = new HeaderElement(webDriver);
 
     public HeaderElement getHeaderElement() {
@@ -17,7 +22,7 @@ public class HomePage extends ParentPage {
 
     public HomePage openHomePage(){
         try {
-            webDriver.get("https://brain.com.ua/ukr/");
+            webDriver.get(base_url +  getRelativeURL() );
             logger.info("LoginPage was opened");
         } catch (Exception e) {
             Assert.fail("Can not open Login Page" + e);

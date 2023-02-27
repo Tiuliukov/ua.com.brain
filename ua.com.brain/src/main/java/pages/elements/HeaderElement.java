@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.*;
 
 public class HeaderElement extends CommonActionsWithElements {
-    @FindBy(xpath = ".//*[@class = 'br-th-login ']")
+    @FindBy(xpath = ".//button[@class = 'auth-popup-button']")
     private WebElement buttonLogin;
     @FindBy(xpath = ".//div[@class = 'cart js-cart br-h-cart']")
     private WebElement buttonCart;
@@ -29,7 +29,7 @@ public class HeaderElement extends CommonActionsWithElements {
         super(webDriver);
     }
 
-    public LoginPopup clickOnButtonLogin() {
+    public LoginPopup clickOnButtonLoggingIn() {
         clickOnElement(buttonLogin);
         return new LoginPopup(webDriver);
     }
