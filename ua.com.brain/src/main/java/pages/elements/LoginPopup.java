@@ -1,12 +1,13 @@
-package pages;
+package pages.elements;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.elements.HeaderElement;
+import pages.CommonActionsWithElements;
+import pages.ParentPage;
 
-public class LoginPopup extends ParentPage{
+public class LoginPopup extends CommonActionsWithElements {
     @FindBy(id = "modal-login-phone-field")
     private WebElement inputLogin;
     @FindBy(id = "modal-login-password-field")

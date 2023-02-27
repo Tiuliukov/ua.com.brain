@@ -13,7 +13,13 @@ public class B2CPage extends ParentPage{
         super(webDriver);
     }
 
+    @Override
+    String getRelativeURL() {
+        return "/brainup/b2c";
+    }
+
     public B2CPage checkIsRedirectedToB2CPage(){
+        checkURL();
         Assert.assertTrue("B2C page title is not displayed", isElementDisplayed(B2CPageTitle));
         return this;
     }

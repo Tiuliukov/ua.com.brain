@@ -20,12 +20,19 @@ public class WishListPage extends ParentPage{
         super(webDriver);
     }
 
+    @Override
+    String getRelativeURL() {
+        return "/cabinet/favorites/";
+    }
+
     public WishListPage checkIsRedirectedToWishListPage(){
+        checkURL();
         Assert.assertTrue("Wish List page is not loaded", isElementDisplayed(titleWishListPage));
         return this;
     }
 
     public WishListPage checkIsProductInWishList(String expectedProductTitle) {
+        checkURL();
         Assert.assertTrue("Product title is not displayed", isElementDisplayed(actualProductTitle));
         Assert.assertEquals("Wrong product title is displayed", expectedProductTitle, actualProductTitle.getText());
         return this;
