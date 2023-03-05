@@ -20,10 +20,16 @@ public class StoresPage extends ParentPage{
         return "/shops_map/#[a-zA-Z0-9]*";
     }
 
+    /**
+     * Checking is 'Stores' page opened by checking URL by pattern
+     * Checking is title and 'ChooseCity' button displayed
+     * @return StoresPage
+     */
     public StoresPage checkIsRedirectedToStoresPage(){
         checkURLWithPattern();
         Assert.assertTrue("Stores page title is not displayed", isElementDisplayed(storesPageTitle));
-        Assert.assertTrue("'Choose city' button is not displayed on 'Stores' page", isElementDisplayed(buttonChooseCity));
+        Assert.assertTrue("'Choose city' button is not displayed on 'Stores' page",
+                isElementDisplayed(buttonChooseCity));
         return this;
     }
 }

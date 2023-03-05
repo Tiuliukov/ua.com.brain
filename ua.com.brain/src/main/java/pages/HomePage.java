@@ -20,6 +20,10 @@ public class HomePage extends ParentPage {
         return headerElement;
     }
 
+    /**
+     * Open Home page by base URL
+     * @return HomePage
+     */
     public HomePage openHomePage(){
         try {
             webDriver.get(base_url +  getRelativeURL() );
