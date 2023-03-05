@@ -25,7 +25,7 @@ public class ProductPage extends ParentPage{
 
     @Override
     String getRelativeURL() {
-        String relativeUrl = "/" + productContent.getAttribute("data-slug") + ".html";
+        String relativeUrl = "/" + productContent.getAttribute("data-slug") + ".html"; //TODO Add correct way to get URL
         return relativeUrl;
     }
 
