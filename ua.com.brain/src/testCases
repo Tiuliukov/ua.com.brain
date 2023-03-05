@@ -1,4 +1,4 @@
-#1 Successful login test.
+#TC_1 Successful login test.
 
 Preconditions: User with Login:'+38 (098) 501-97-80' Password:'36075354' was created.
 STR:
@@ -9,27 +9,51 @@ STR:
 - Click on the 'Sign In' button.
 ER: User successfully logged in and proceed to Main page. 'User Panel' button is displayed.
 
-#2 Search test.
+#TC_2 Invalid login test
+STR:
+- Open HomePage 'https://brain.com.ua/ukr/';
+- Click on the 'Login' button;
+- Enter valid Username '+38 (098) 501-97-80';
+- Enter invalid Password '12341234';
+- Click on the 'Sign In' button.
+ER: User Is NOT logged in. 'User Panel' button is NOT displayed.
+
+#TC3_searchProductByTitle.
 STR:
 - Open 'https://brain.com.ua/ukr/';
-- Enter 'iPhone' in the 'Search Field';
-ER: First result include item with 'iPhone' in title.
+- Enter "Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)" in the 'Search Field';
+- Click on product by title in search result 'Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)';
+ER: 'Product' page is open. Title on 'Product' page corresponds Product DTO title
+'Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)'
 
-#3 Open 'Stores' page.
+#TC_4_openStoresPage.
 STR:
 - Open 'https://brain.com.ua/ukr/';
 - Click on the 'Stores' button;
-ER: 'Stores' page is open. Title is displayed. 'Choose City' button is displayed.
+ER: 'Stores' page is open by 'https://brain.com.ua/ukr/shops_map/#[a-zA-Z0-9]*'. Title is displayed.
+'Choose City' button is displayed.
 
-#4 Open 'Product' page.
+#TC_5_openB2CPage.
 STR:
 - Open 'https://brain.com.ua/ukr/';
-- Enter 'iPhone' in the 'Search Field';
-- Click on the item with title which include 'iPhone';
-ER: 'Product' page is open. Product title include 'iPhone'.
+- Click on the 'LoyaltyProgram' button;
+- Click on the 'B2C' item in 'LoyaltyProgram' drop down list;
+ER: 'B2C' page is open by 'https://brain.com.ua/ukr/brainup/b2c'. Title is displayed.
 
-#5 Open HelpChat popup.
+#TC_6_AddToWishList.
+Precondition:
+- Open HomePage 'https://brain.com.ua/ukr/';
+- Click on the 'Login' button;
+- Enter Username '+38 (098) 501-97-80';
+- Enter Password '36075354';
+- Click on the 'Sign In' button.
+
 STR:
 - Open 'https://brain.com.ua/ukr/';
-- Click on the 'HelpChat' button;
-ER: Popup is opened. 'Send Message' button is displayed in the 'HelpChat' popup.
+- Enter "Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)" in the 'Search Field';
+- Click on product by title in search result "Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)";
+- Click on the 'AddToWishList' button;
+- Click on the 'WishList' button on header;
+ER: 'WishList' page is open by 'https://brain.com.ua/ukr/cabinet/favorites/'. 'Product' title in 'Wish list'
+corresponds Product DTO title 'Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)'
+

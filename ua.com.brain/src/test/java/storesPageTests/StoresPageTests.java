@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class StoresPageTests extends BaseTest {
     @Test
-    public void TC_3_openStoresPage(){
+    public void TC_4_openStoresPage(){
         homePage
                 .openHomePage()
                 .getHeaderElement()

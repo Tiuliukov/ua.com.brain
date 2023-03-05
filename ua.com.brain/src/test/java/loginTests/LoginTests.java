@@ -26,7 +26,7 @@ public class LoginTests extends BaseTest {
                 .getHeaderElement()
                 .clickOnButtonLoggingIn()
                 .checkIsLoginPopupDisplayed()
-                .fillInInputLogin(TestData.INVALID_LOGIN)
+                .fillInInputLogin(TestData.VALID_LOGIN)
                 .fillInInputPassword(TestData.INVALID_PASSWORD)
                 .clickOnButtonLogin()
                 .getHeaderElement()
