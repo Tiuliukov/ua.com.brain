@@ -25,7 +25,8 @@ public class ProductPage extends ParentPage{
 
     @Override
     String getRelativeURL() {
-        String relativeUrl = "/" + productContent.getAttribute("data-slug") + ".html"; //TODO Add correct way to get URL
+        String relativeUrl =
+                "/" + productContent.getAttribute("data-slug") + ".html"; //TODO Add correct way to get URL
         return relativeUrl;
     }
 
@@ -33,17 +34,32 @@ public class ProductPage extends ParentPage{
         return headerElement;
     }
 
+    /**
+     * Checking is 'Product' page opened by checking URL and product code is displayed
+     * @return ProductPage
+     */
     public ProductPage checkIsRedirectedToProductPage() {
         checkURL();
         Assert.assertTrue("Product page is not loaded", isElementDisplayed(productCode));
         return this;
     }
 
+    /**
+     * Compare expected product title from Product DTO  and actual product title from page
+     * @param expectedProductTitle
+     * @return ProductPage
+     */
     public ProductPage checkProductTitle(String expectedProductTitle) {
-        Assert.assertEquals("Wrong product title is displayed", expectedProductTitle.toUpperCase(), actualProductTitle.getText());
+        Assert.assertEquals("Wrong product title is displayed",
+                expectedProductTitle.toUpperCase(), actualProductTitle.getText());
         return this;
     }
 
+    /**
+     * Click on the 'addToWishList' button on 'Product' page
+     * Add product to wish list
+     * @return ProductPage
+     */
     public ProductPage clickOnButtonAddToWishList(){
         clickOnElement(buttonWishList);
         return this;

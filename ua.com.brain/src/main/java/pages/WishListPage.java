@@ -25,16 +25,26 @@ public class WishListPage extends ParentPage{
         return "/cabinet/favorites/";
     }
 
+    /**
+     * Checking is 'Stores' page opened by checking URL and title is displayed
+     * @return WishListPage
+     */
     public WishListPage checkIsRedirectedToWishListPage(){
         checkURL();
         Assert.assertTrue("Wish List page is not loaded", isElementDisplayed(titleWishListPage));
         return this;
     }
 
+    /**
+     * Checking is product in wish list by compare expected product title from Product DTO
+     * and actual product title from page.
+     * @param expectedProductTitle
+     * @return WishListPage
+     */
     public WishListPage checkIsProductInWishList(String expectedProductTitle) {
-        checkURL();
         Assert.assertTrue("Product title is not displayed", isElementDisplayed(actualProductTitle));
-        Assert.assertEquals("Wrong product title is displayed", expectedProductTitle, actualProductTitle.getText());
+        Assert.assertEquals("Wrong product title is displayed",
+                expectedProductTitle, actualProductTitle.getText());
         return this;
     }
 
@@ -44,7 +54,8 @@ public class WishListPage extends ParentPage{
     }
 
     public WishListPage checkIsProductListEmpty(){
-        Assert.assertTrue("buttonCabinetDashboard title is displayed", isElementDisplayed(buttonCabinetDashboard));
+        Assert.assertTrue("buttonCabinetDashboard title is displayed",
+                isElementDisplayed(buttonCabinetDashboard));
         return this;
     }
 }
