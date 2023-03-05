@@ -1,6 +1,8 @@
 package baseTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -23,12 +25,14 @@ public class BaseTest {
     protected StoresPage storesPage;
     protected ProductPage productPage;
 
+    public static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
+
     @Before
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(configProperties.TIME_FOR_DEFAULT_WAIT()));
 
         homePage = new HomePage(webDriver);
         loginPopup = new LoginPopup(webDriver);
