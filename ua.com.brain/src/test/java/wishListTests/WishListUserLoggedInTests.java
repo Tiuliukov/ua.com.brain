@@ -23,7 +23,7 @@ public class WishListUserLoggedInTests extends BaseTest {
     }
 
     @Test
-    public void AddToWishList(){
+    public void TC_6_AddToWishList(){
         homePage
                 .openHomePage()
                 .getHeaderElement()

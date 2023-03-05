@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class LoyaltyProgramTests extends BaseTest {
     @Test
-    public void openB2CPage(){
+    public void TC_5_openB2CPage(){
         homePage
                 .openHomePage()
                 .getHeaderElement()

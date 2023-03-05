@@ -7,14 +7,13 @@ import org.junit.Test;
 public class SearchTests extends BaseTest {
 
     @Test
-    public void searchByTitle(){
+    public void TC3_searchProductByTitle(){
         homePage
                 .openHomePage()
                 .getHeaderElement()
                 .enterTextInToInputSearch(Products.Duracell2AA.getDTO().getTitle())
                 .clickOnSearchResultByTitle(Products.Duracell2AA.getDTO().getTitle())
                 .checkIsRedirectedToProductPage()
-                .checkProductTitle(Products.Duracell2AA.getDTO().getTitle())
-                ;
+                .checkProductTitle(Products.Duracell2AA.getDTO().getTitle());
     }
 }
