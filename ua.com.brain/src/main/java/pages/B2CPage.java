@@ -13,11 +13,18 @@ public class B2CPage extends ParentPage{
         super(webDriver);
     }
 
+    /**
+     * @return string Relative URL "/brainup/b2c"
+     */
     @Override
     String getRelativeURL() {
         return "/brainup/b2c";
     }
 
+    /**
+     * Checking is 'B2CPage' opened by checking displaying page title
+     * @return B2CPage
+     */
     public B2CPage checkIsRedirectedToB2CPage(){
         checkURL();
         Assert.assertTrue("B2C page title is not displayed", isElementDisplayed(B2CPageTitle));

@@ -3,6 +3,9 @@ package libs;
 import lombok.Builder;
 import lombok.Data;
 
+/**
+ * class which describes main information about products in store.
+ */
 @Data
 @Builder
 public class ProductDTO {
