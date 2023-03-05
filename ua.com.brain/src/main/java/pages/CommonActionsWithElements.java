@@ -27,6 +27,10 @@ public class CommonActionsWithElements {
         webDriverWait10 = new WebDriverWait(webDriver, Duration.ofSeconds(configProperties.TIME_FOR_EXPLICIT_WAIT_LOW()));
     }
 
+    /**
+     * Clicking on any element by parameter 'webElement'
+     * @param webElement
+     */
     protected void clickOnElement (WebElement webElement){
         try {
             webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
@@ -38,6 +42,10 @@ public class CommonActionsWithElements {
         }
     }
 
+    /**
+     * Clicking on any element by xpath
+     * @param xpath
+     */
     protected void clickOnElement (String xpath){
         try {
             WebElement webElement = webDriver.findElement(By.xpath(xpath));
@@ -47,6 +55,26 @@ public class CommonActionsWithElements {
         }
     }
 
+    /**
+     * Clicking on any element by parameter String 'textOfElement'
+     * @param textOfElement
+     */
+    protected void clickOnElementByText(String textOfElement){
+        try {
+            WebElement webElement = findElementByText(textOfElement);
+            webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
+            webElement.click();
+            logger.info("Element was clicked");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
+    /**
+     * Enter text by parameter 'text' in any element by parameter 'webElement'
+     * @param webElement
+     * @param text
+     */
     protected void enterTextIntoElement (WebElement webElement, String text){
         try {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
@@ -59,6 +87,13 @@ public class CommonActionsWithElements {
         }
     }
 
+    /**
+     * checking is element displayed by parameter 'webElement'
+     * Used waiter TIME_FOR_EXPLICIT_WAIT_LOW with visibility condition
+     * write message in log
+     * @param webElement
+     * @return
+     */
     protected boolean isElementDisplayed(WebElement webElement){
         try {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
@@ -78,6 +113,12 @@ public class CommonActionsWithElements {
         }
     }
 
+    /**
+     * Find element by text
+     * Used waiter TIME_FOR_EXPLICIT_WAIT_LOW with visibility condition
+     * @param textOfElement
+     * @return webElement
+     */
     protected WebElement findElementByText (String textOfElement){
         try {
             WebElement webElement;
@@ -90,17 +131,11 @@ public class CommonActionsWithElements {
         }
     }
 
-    protected void clickOnElementByText(String textOfElement){
-        try {
-            WebElement webElement = findElementByText(textOfElement);
-            webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
-            webElement.click();
-            logger.info("Element was clicked");
-        } catch (Exception e) {
-            printErrorAndStopTest(e);
-        }
-    }
-
+    /**
+     * Get String Element name from Accessibility by parameter webElement
+     * @param webElement
+     * @return String 'AccessibleName'
+     */
     private String getElementName(WebElement webElement){
         try {
             return webElement.getAccessibleName();
@@ -109,6 +144,10 @@ public class CommonActionsWithElements {
         }
     }
 
+    /**
+     * Exception Handling
+     * @param e
+     */
     protected void printErrorAndStopTest(Exception e){
         logger.error("Can not work with element" + e);
         Assert.fail("Can not work with element" + e);

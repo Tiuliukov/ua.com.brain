@@ -6,6 +6,9 @@ import lombok.ToString;
 
 import static libs.ProductDTO.*;
 
+/**
+ * Valid test data for test cases
+ */
 @Getter
 @ToString
 @AllArgsConstructor
