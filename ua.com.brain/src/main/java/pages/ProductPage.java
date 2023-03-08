@@ -13,9 +13,10 @@ public class ProductPage extends ParentPage{
     private WebElement productCode;
     @FindBy(xpath = ".//*[@class = 'br-del-pr']//button[@class = 'like-link']")
     private WebElement buttonWishList;
-
     @FindBy(xpath = ".//*[@class = 'container br-container-main br-container-prt']")
     private WebElement productContent;
+
+    private String RelativeURL = "";
 
     private HeaderElement headerElement = new HeaderElement(webDriver);
 
@@ -25,9 +26,15 @@ public class ProductPage extends ParentPage{
 
     @Override
     String getRelativeURL() {
-        String relativeUrl =
-                "/" + productContent.getAttribute("data-slug") + ".html"; //TODO Add correct way to get URL
-        return relativeUrl;
+        return RelativeURL;
+    }
+
+    /**
+     * Set urlFromDTO to RelativeURL for add opportunity to compare it in checkIsRedirectedToWishListPage()
+     * @param urlFromDTO
+     */
+    private void setRelativeURL (String urlFromDTO){
+        RelativeURL = "/" + urlFromDTO;
     }
 
     public HeaderElement getHeaderElement() {
@@ -38,7 +45,8 @@ public class ProductPage extends ParentPage{
      * Checking is 'Product' page opened by checking URL and product code is displayed
      * @return ProductPage
      */
-    public ProductPage checkIsRedirectedToProductPage() {
+    public ProductPage checkIsRedirectedToProductPage(String urlFromDTO) {
+        setRelativeURL(urlFromDTO);
         checkURL();
         Assert.assertTrue("Product page is not loaded", isElementDisplayed(productCode));
         return this;

@@ -13,7 +13,7 @@ public class SearchTests extends BaseTest {
                 .getHeaderElement()
                 .enterTextInToInputSearch(Products.Duracell2AA.getDTO().getTitle())
                 .clickOnSearchResultByTitle(Products.Duracell2AA.getDTO().getTitle())
-                .checkIsRedirectedToProductPage()
+                .checkIsRedirectedToProductPage(Products.Duracell2AA.getDTO().getPath())
                 .checkProductTitle(Products.Duracell2AA.getDTO().getTitle());
     }
 }

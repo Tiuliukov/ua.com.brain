@@ -64,8 +64,7 @@ public class CommonActionsWithElements {
         try {
             WebElement webElement = findElementByText(textOfElement);
             webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
-            webElement.click();
-            logger.info("Element was clicked");
+            clickOnElement(webElement);
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }

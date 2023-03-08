@@ -12,7 +12,7 @@ public class WishListPage extends ParentPage{
     private WebElement actualProductTitle;
     @FindBy(xpath = ".//*[@class = 'br-wrap-block br-prof-top-block br-prof-fav']//h3")
     private WebElement titleWishListPage;
-    @FindBy(xpath = ".//*[@class = 'br-wrap-block br-prof-top-block br-prof-fav']//a")
+    @FindBy(xpath = ".//*[@class = 'col-xs-12']//a[@href = '/ukr/cabinet/dashboard/']")
     private WebElement buttonCabinetDashboard;
 
 
@@ -48,13 +48,21 @@ public class WishListPage extends ParentPage{
         return this;
     }
 
+    /**
+     * Remove all products which added to Wishlist by UI (by clicking on the 'DeleteAllFavorites' button)
+     * @return WishListPage
+     */
     public WishListPage removeAllProductsFromWishList(){
         clickOnElement(buttonDeleteAllFavorites);
         return this;
     }
 
-    public WishListPage checkIsProductListEmpty(){
-        Assert.assertTrue("buttonCabinetDashboard title is displayed",
+    /**
+     * Check is Wish List is empty. "CabinetDashboard' button is displayed if Wish List is empty
+     * @return WishListPage
+     */
+    public WishListPage checkIsWishListEmpty(){
+        Assert.assertTrue("CabinetDashboard button is NOT displayed",
                 isElementDisplayed(buttonCabinetDashboard));
         return this;
     }

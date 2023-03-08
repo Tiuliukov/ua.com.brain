@@ -1,8 +1,8 @@
 Locators
 
 #Header
-heder.logo =
-header.button.chooseCity =
+heder.logo = .//a[@class = 'svg-logo-gray']
+header.button.chooseCity = .//button[@class = 'mycity_container mycity mycityname']
 header.button.stores = .//li[@class = 'top-menu-list-item folder'] or .//div[@class='header-top']//a[@href='/ukr/shops_map/']
 header.DDList.loyaltyProgram =
 header.DDListItem.b2c= .//a[@href = '/ukr/brainup/b2c']
