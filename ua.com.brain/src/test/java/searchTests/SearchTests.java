@@ -15,5 +15,6 @@ public class SearchTests extends BaseTest {
                 .clickOnSearchResultByTitle(Products.Duracell2AA.getDTO().getTitle())
                 .checkIsRedirectedToProductPage(Products.Duracell2AA.getDTO().getPath())
                 .checkProductTitle(Products.Duracell2AA.getDTO().getTitle());
+
     }
 }

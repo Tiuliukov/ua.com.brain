@@ -57,4 +57,29 @@ STR:
 ER: 'WishList' page is open by 'https://brain.com.ua/ukr/cabinet/favorites/'. 'Product' title in 'Wish list'
 corresponds Product DTO title 'Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)'
 
+Post-condition
+- Open HomePage 'https://brain.com.ua/ukr/';
+- Click on the 'Wish List' button;
+- Click on the 'Remove All Products' button;
 
+#TC_7_AddToCart.
+Precondition:
+- Open HomePage 'https://brain.com.ua/ukr/';
+- Click on the 'Login' button;
+- Enter Username '+38 (098) 501-97-80';
+- Enter Password '36075354';
+- Click on the 'Sign In' button.
+
+STR:
+- Open 'https://brain.com.ua/ukr/';
+- Enter "Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)" in the 'Search Field';
+- Click on product by title in search result "Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)";
+- Click on the 'AddToCart' button;
+- Click on the 'GoToCart' button on 'Cart' popup;
+ER: 'Cart' page is open by 'https://brain.com.ua/ukr/cart'. 'Product' title in 'Cart'
+corresponds Product DTO title 'Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)'
+
+Post-condition
+- Open HomePage 'https://brain.com.ua/ukr/';
+- Click on the 'Cart' button;
+- Click on the 'Clear Cart' button;
