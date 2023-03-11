@@ -8,7 +8,7 @@ import pages.CommonActionsWithElements;
 
 public class LoginPopup extends CommonActionsWithElements {
     @FindBy(id = "modal-login-phone-field")
-    private WebElement inputLogin;
+    private WebElement inputLoginPhone;
     @FindBy(id = "modal-login-password-field")
     private WebElement inputPassword;
     @FindBy(xpath = ".//*[@class = 'tab-pane active']//button[@class = 'br-login-submit']")
@@ -41,7 +41,7 @@ public class LoginPopup extends CommonActionsWithElements {
      * @return LoginPopup
      */
     public LoginPopup fillInInputLogin(String userLogin) {
-        enterTextIntoElement(inputLogin, userLogin);
+        enterTextIntoElement(inputLoginPhone, userLogin);
         return this;
     }
 

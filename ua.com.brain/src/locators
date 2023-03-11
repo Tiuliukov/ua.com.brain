@@ -1,7 +1,12 @@
 Locators
 
-#Header
-heder.logo = .//a[@class = 'svg-logo-gray']
+#LoginPopup
+LoginPopup.input.phone = .//input[@id = 'modal-login-phone-field']
+LoginPopup.input.password = .//input[@id = 'modal-login-password-field']
+LoginPopup.button.SignIn = .//div[@class = 'tab-pane active']//button[@class = 'br-login-submit']
+
+#HeaderElement
+header.logo = .//a[@class = 'svg-logo-gray']
 header.button.chooseCity = .//button[@class = 'mycity_container mycity mycityname']
 header.button.stores = .//li[@class = 'top-menu-list-item folder'] or .//div[@class='header-top']//a[@href='/ukr/shops_map/']
 header.DDList.loyaltyProgram =
@@ -19,22 +24,30 @@ header.button.wishList =
 header.button.comparison =
 header.button.cart = .//div[@class = 'cart js-cart br-h-cart']
 
-header.title.searchProduct = .//div[@class = 'qsr-block ']//div[contains(@title, 'iPhone')]
+#CartPopup
+cartPopup.button.goToCart = .//*[@class = 'modal-dialog']//button[@data-link = '/ukr/cart']
+cartPopup.button.checkDelivery = .//button[@class = 'br-dt-p checkout-modal-delivery-link']
 
-#Main
-main.button.helpChat = .//button[@class = 'bwc-chat bwc-chat-inactive']
+#B2C
+B2CPage.title = #title
+
+#CartPage
+cartPage.button.ClearCart = .//a[@class = 'clear-cart']
+cartPage.title.actualProductTitle = .//*[@class = 'br-ci-name']//a[@class = 'to_product']
+
+#HomePage
 
 #ProductPage
-productPage.title.product = .//h1[contains(text(), 'iPhone')]
+productPage.title.product = .//h1
+productPage.productCode = #product_code
+productPage.button.WishList = .//*[@class = 'br-del-pr']//button[@class = 'like-link']
+productPage.button.AddToCart = .//*[@class = 'br-pr-cb main-order-block']
+productPage.productContent = .//*[@class = 'container br-container-main br-container-prt']
 
 #StoresPage
 stores.title = .//h1[@class='title']
 stores.button.chooseCity = .//button[@class = 'choice_city_button']
 
-#LoginPopup
-inputPhoneField = .//input[@id = 'modal-login-phone-field']
-inputUserPassword = .//input[@id = 'modal-login-password-field']
-buttonSignIn = .//div[@class = 'tab-pane active']//button[@class = 'br-login-submit']
 
-#HelpChat
-sendMessageButton = .//div[@class = 'bwc-send bwc-button']
+
+

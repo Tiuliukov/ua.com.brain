@@ -22,11 +22,6 @@ public class BaseTest {
     protected WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     protected HomePage homePage;
-    protected LoginPopup loginPopup;
-    protected HeaderElement headerElement;
-    protected StoresPage storesPage;
-    protected ProductPage productPage;
-    protected CartPage cartPage;
 
     public static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
@@ -38,13 +33,7 @@ public class BaseTest {
         webDriver = new ChromeDriver(ops);
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(configProperties.TIME_FOR_DEFAULT_WAIT()));
-
         homePage = new HomePage(webDriver);
-        loginPopup = new LoginPopup(webDriver);
-        headerElement = new HeaderElement(webDriver);
-        storesPage = new StoresPage(webDriver);
-        productPage = new ProductPage(webDriver);
-        cartPage = new CartPage(webDriver);
     }
 
     @After
