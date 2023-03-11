@@ -47,9 +47,9 @@ public class HeaderElement extends CommonActionsWithElements {
         return new StoresPage(webDriver);
     }
 
-    public StoresPage clickOnButtonCart(){
-        clickOnElement(buttonStores);
-        return new StoresPage(webDriver);
+    public CartPage clickOnButtonCart(){
+        clickOnElement(buttonCart);
+        return new CartPage(webDriver);
     }
 
     /**
@@ -122,4 +122,5 @@ public class HeaderElement extends CommonActionsWithElements {
         clickOnElement(buttonWishList);
         return new WishListPage(webDriver);
     }
+
 }

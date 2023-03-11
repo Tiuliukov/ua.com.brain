@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.elements.CartPopup;
 import pages.elements.HeaderElement;
 
 public class ProductPage extends ParentPage{
@@ -13,6 +14,8 @@ public class ProductPage extends ParentPage{
     private WebElement productCode;
     @FindBy(xpath = ".//*[@class = 'br-del-pr']//button[@class = 'like-link']")
     private WebElement buttonWishList;
+    @FindBy(xpath = ".//*[@class = 'br-pr-cb main-order-block']")
+    private WebElement buttonAddToCart;
     @FindBy(xpath = ".//*[@class = 'container br-container-main br-container-prt']")
     private WebElement productContent;
 
@@ -71,5 +74,14 @@ public class ProductPage extends ParentPage{
     public ProductPage clickOnButtonAddToWishList(){
         clickOnElement(buttonWishList);
         return this;
+    }
+
+    /**
+     * Click on the 'AddToCart' button on 'Product' page
+     * @return CartPopup
+     */
+    public CartPopup clickOnButtonAddToCart(){
+        clickOnElement(buttonAddToCart);
+        return new CartPopup(webDriver);
     }
 }
