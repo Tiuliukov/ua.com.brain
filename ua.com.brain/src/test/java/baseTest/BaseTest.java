@@ -8,6 +8,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import pages.CartPage;
 import pages.HomePage;
 import pages.elements.LoginPopup;
 import pages.ProductPage;
@@ -24,13 +26,16 @@ public class BaseTest {
     protected HeaderElement headerElement;
     protected StoresPage storesPage;
     protected ProductPage productPage;
+    protected CartPage cartPage;
 
     public static ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
     @Before
     public void setUp(){
+        ChromeOptions ops = new ChromeOptions();
+        ops.addArguments("--remote-allow-origins=*");
         WebDriverManager.chromedriver().setup();
-        webDriver = new ChromeDriver();
+        webDriver = new ChromeDriver(ops);
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(configProperties.TIME_FOR_DEFAULT_WAIT()));
 
@@ -39,6 +44,7 @@ public class BaseTest {
         headerElement = new HeaderElement(webDriver);
         storesPage = new StoresPage(webDriver);
         productPage = new ProductPage(webDriver);
+        cartPage = new CartPage(webDriver);
     }
 
     @After
