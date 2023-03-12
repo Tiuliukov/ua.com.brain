@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,6 +30,7 @@ public class WishListPage extends ParentPage{
      * Checking is 'Stores' page opened by checking URL and title is displayed
      * @return WishListPage
      */
+    @Step
     public WishListPage checkIsRedirectedToWishListPage(){
         checkURL();
         Assert.assertTrue("Wish List page is not loaded", isElementDisplayed(titleWishListPage));
@@ -41,8 +43,8 @@ public class WishListPage extends ParentPage{
      * @param expectedProductTitle
      * @return WishListPage
      */
+    @Step
     public WishListPage checkIsProductInWishList(String expectedProductTitle) {
-        Assert.assertTrue("Product title is not displayed", isElementDisplayed(actualProductTitle));
         Assert.assertEquals("Wrong product title is displayed",
                 expectedProductTitle, actualProductTitle.getText());
         return this;
@@ -52,6 +54,7 @@ public class WishListPage extends ParentPage{
      * Remove all products which added to Wishlist by UI (by clicking on the 'DeleteAllFavorites' button)
      * @return WishListPage
      */
+    @Step
     public WishListPage removeAllProductsFromWishList(){
         clickOnElement(buttonDeleteAllFavorites);
         return this;
@@ -61,6 +64,7 @@ public class WishListPage extends ParentPage{
      * Check is Wish List is empty. "CabinetDashboard' button is displayed if Wish List is empty
      * @return WishListPage
      */
+    @Step
     public WishListPage checkIsWishListEmpty(){
         Assert.assertTrue("CabinetDashboard button is NOT displayed",
                 isElementDisplayed(buttonCabinetDashboard));
