@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.elements.HeaderElement;
@@ -24,6 +25,7 @@ public class HomePage extends ParentPage {
      * Open Home page by base URL
      * @return HomePage
      */
+    @Step
     public HomePage openHomePage(){
         try {
             webDriver.get(base_url +  getRelativeURL() );

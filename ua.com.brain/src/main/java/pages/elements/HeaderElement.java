@@ -1,5 +1,6 @@
 package pages.elements;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +34,7 @@ public class HeaderElement extends CommonActionsWithElements {
      * method which clicking on 'Login' button and returns LoginPopup object.
      * @return LoginPopup
      */
+    @Step
     public LoginPopup clickOnButtonLoggingIn() {
         clickOnElement(buttonLogin);
         return new LoginPopup(webDriver);
@@ -42,11 +44,17 @@ public class HeaderElement extends CommonActionsWithElements {
      * method which clicking on 'Stores' button and returns StoresPage object.
      * @return StoresPage
      */
+    @Step
     public StoresPage clickOnButtonStores(){
         clickOnElement(buttonStores);
         return new StoresPage(webDriver);
     }
 
+    /**
+     * method which clicking on 'Cart' button and returns CartPage object.
+     * @return CartPage
+     */
+    @Step
     public CartPage clickOnButtonCart(){
         clickOnElement(buttonCart);
         return new CartPage(webDriver);
@@ -58,6 +66,7 @@ public class HeaderElement extends CommonActionsWithElements {
      * -certificates
      * @return HeaderElement
      */
+    @Step
     public HeaderElement clickOnDDListLoyaltyProgram(){
         clickOnElementByText(buttonLoyaltyProgram);
         return this;
@@ -67,6 +76,7 @@ public class HeaderElement extends CommonActionsWithElements {
      * method which clicking on 'B2C' item and returns B2CPage object
      * @return B2CPage
      */
+    @Step
     public B2CPage clickOnDDLLoyaltyProgramItemB2C(){
         clickOnElementByText(DDLLoyaltyProgramItemB2C);
         return new B2CPage(webDriver);
@@ -77,6 +87,7 @@ public class HeaderElement extends CommonActionsWithElements {
      * Writing successful message in log file
      * @return HeaderElement
      */
+    @Step
     public HeaderElement checkIsUserSuccessfullyLoggingIn (){
         Assert.assertTrue("User is not logged in", isElementDisplayed(buttonUserPanel));
         logger.info("User successfully logged In");
@@ -88,6 +99,7 @@ public class HeaderElement extends CommonActionsWithElements {
      * Writing message in log file
      * @return HeaderElement
      */
+    @Step
     public HeaderElement checkIsUserNotLoggingIn(){
         webDriverWait10.until(ExpectedConditions.visibilityOf(buttonLogin));
         Assert.assertFalse("User is logged in", isElementDisplayed(buttonUserPanel));
@@ -100,6 +112,7 @@ public class HeaderElement extends CommonActionsWithElements {
      * @param textSearch
      * @return HeaderElement
      */
+    @Step
     public HeaderElement enterTextInToInputSearch(String textSearch) {
         enterTextIntoElement(inputSearch, textSearch);
         return this;
@@ -110,6 +123,7 @@ public class HeaderElement extends CommonActionsWithElements {
      * @param title
      * @return ProductPage
      */
+    @Step
     public ProductPage clickOnSearchResultByTitle(String title){
         clickOnElement(String.format(itemInSearch, title));
         return new ProductPage(webDriver);
@@ -118,6 +132,7 @@ public class HeaderElement extends CommonActionsWithElements {
     /**
      * method which clicking on 'WishList' button and returns WishListPage object.
      */
+    @Step
     public WishListPage clickOnButtonWishList() {
         clickOnElement(buttonWishList);
         return new WishListPage(webDriver);

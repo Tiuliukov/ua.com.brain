@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,6 +49,7 @@ public class ProductPage extends ParentPage{
      * Checking is 'Product' page opened by checking URL and product code is displayed
      * @return ProductPage
      */
+    @Step
     public ProductPage checkIsRedirectedToProductPage(String urlFromDTO) {
         setRelativeURL(urlFromDTO);
         checkURL();
@@ -60,6 +62,7 @@ public class ProductPage extends ParentPage{
      * @param expectedProductTitle
      * @return ProductPage
      */
+    @Step
     public ProductPage checkProductTitle(String expectedProductTitle) {
         Assert.assertEquals("Wrong product title is displayed",
                 expectedProductTitle.toUpperCase(), actualProductTitle.getText());
@@ -71,6 +74,7 @@ public class ProductPage extends ParentPage{
      * Add product to wish list
      * @return ProductPage
      */
+    @Step
     public ProductPage clickOnButtonAddToWishList(){
         clickOnElement(buttonWishList);
         return this;
@@ -80,6 +84,7 @@ public class ProductPage extends ParentPage{
      * Click on the 'AddToCart' button on 'Product' page
      * @return CartPopup
      */
+    @Step
     public CartPopup clickOnButtonAddToCart(){
         clickOnElement(buttonAddToCart);
         return new CartPopup(webDriver);
