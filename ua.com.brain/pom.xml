@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <aspectj.version>1.9.6</aspectj.version>
+        <aspectj.version>1.9.22</aspectj.version>
         <compiler.version>1.8</compiler.version>
         <tag>@R001</tag>
     </properties>
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.3.1</version>
+            <version>5.8.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/log4j/log4j -->

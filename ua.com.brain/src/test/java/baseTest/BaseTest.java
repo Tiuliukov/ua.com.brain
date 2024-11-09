@@ -101,16 +101,20 @@ public class BaseTest {
         if ((browser == null) || "chrome".equalsIgnoreCase(browser)){
             ChromeOptions ops = new ChromeOptions();
             ops.addArguments("--remote-allow-origins=*");
-            WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().clearDriverCache().setup();
+            //WebDriverManager.chromedriver().setup();
             webDriver = new ChromeDriver(ops);
         } else if ("firefox".equalsIgnoreCase(browser)){
-            WebDriverManager.firefoxdriver().setup();
+            WebDriverManager.firefoxdriver().clearDriverCache().setup();
+            //WebDriverManager.firefoxdriver().setup();
             webDriver = new FirefoxDriver();
         } else if ("safari".equalsIgnoreCase(browser)) {
-            WebDriverManager.safaridriver().setup();
+            WebDriverManager.safaridriver().clearDriverCache().setup();
+            //WebDriverManager.safaridriver().setup();
             webDriver = new SafariDriver();
         } else if ("edge".equalsIgnoreCase(browser)){
-            WebDriverManager.edgedriver().setup();
+            WebDriverManager.edgedriver().clearDriverCache().setup();
+            //WebDriverManager.edgedriver().setup();
             webDriver = new EdgeDriver();
         }
 
