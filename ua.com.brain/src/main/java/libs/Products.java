@@ -16,7 +16,7 @@ public enum Products {
     Duracell2AA(builder()
             .id("5000394058163 / 81551267")
             .dataCode("ET03771")
-            .title("Батарейка Duracell AA MN1500 LR06 * 2 (5000394058163 / 81551267)")
+            .title("Батарейка Duracell AA лужні 2 шт. в упаковці (5000394058163 / 81551267)")
             .category("Батарейки")
             .path("Batareyka_Duracell_AA_MN1500_LR06_2_81417078_81267329-p24421.html")
             .build()),
