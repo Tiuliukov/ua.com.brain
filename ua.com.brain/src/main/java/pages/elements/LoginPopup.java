@@ -1,5 +1,6 @@
 package pages.elements;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,6 +41,7 @@ public class LoginPopup extends CommonActionsWithElements {
      * @param userLogin
      * @return LoginPopup
      */
+
     public LoginPopup fillInInputLogin(String userLogin) {
         enterTextIntoElement(inputLoginPhone, userLogin);
         return this;
