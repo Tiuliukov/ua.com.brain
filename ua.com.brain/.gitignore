@@ -17,4 +17,4 @@ target/site
 .allure
 */src/main/java/resources/hiddenConfig.properties
 
-allure-results
+target/allure-results
