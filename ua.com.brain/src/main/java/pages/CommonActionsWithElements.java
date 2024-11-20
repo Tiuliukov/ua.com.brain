@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import libs.ConfigProperties;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.Assert;
@@ -75,6 +76,7 @@ public class CommonActionsWithElements {
      * @param webElement
      * @param text
      */
+    @Step
     protected void enterTextIntoElement (WebElement webElement, String text){
         try {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
@@ -94,6 +96,7 @@ public class CommonActionsWithElements {
      * @param webElement
      * @return
      */
+    @Step
     protected boolean isElementDisplayed(WebElement webElement){
         try {
             webDriverWait10.until(ExpectedConditions.visibilityOf(webElement));
@@ -119,6 +122,7 @@ public class CommonActionsWithElements {
      * @param textOfElement
      * @return webElement
      */
+    @Step
     protected WebElement findElementByText (String textOfElement){
         try {
             WebElement webElement;
