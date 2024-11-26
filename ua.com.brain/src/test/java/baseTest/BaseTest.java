@@ -43,12 +43,12 @@ public class BaseTest {
         homePage = new HomePage(webDriver);
     }
 
-//    @After
-//    public void tearDown(){
-//        webDriver.quit();
-//        logger.info("Browser was closed");
-//        logger.info("----- " + testName.getMethodName() + " was ended -----");
-//    }
+    @After
+    public void tearDown(){
+        webDriver.quit();
+        logger.info("Browser was closed");
+        logger.info("----- " + testName.getMethodName() + " was ended -----");
+    }
 
     @Rule
     public TestName testName = new TestName();
