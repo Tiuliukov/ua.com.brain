@@ -12,9 +12,9 @@ public class LoginPopup extends CommonActionsWithElements {
     private WebElement inputLoginPhone;
     @FindBy(id = "modal-login-password-field")
     private WebElement inputPassword;
-    @FindBy(xpath = ".//*[@class = 'tab-pane active']//button[@class = 'br-login-submit']")
+    @FindBy(css = "#login-tab .br-login-submit")
     private WebElement buttonLogin;
-    @FindBy(xpath = ".//*[@class = 'br-login-tabs']")
+    @FindBy(id = "login-tab")
     private WebElement loginTabs;
 
     private HeaderElement headerElement = new HeaderElement(webDriver);
