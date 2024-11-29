@@ -9,17 +9,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.*;
 
 public class HeaderElement extends CommonActionsWithElements {
-    @FindBy(xpath = ".//button[@class = 'auth-popup-button']")
+    @FindBy(className = "auth-popup-button")
     private WebElement buttonLogin;
-    @FindBy(xpath = ".//div[@class = 'cart js-cart br-h-cart']")
+    @FindBy(css = ".cart.js-cart.br-h-cart")
     private WebElement buttonCart;
-    @FindBy(xpath = ".//*[@class = 'user-panel-button active']")
+    @FindBy(className = "user-panel-button")
     private WebElement buttonUserPanel;
-    @FindBy(xpath = ".//li[@class = 'top-menu-list-item folder']")
+    @FindBy(css = ".top-menu-list-item a[href*='shops_map/']")
     private WebElement buttonStores;
-    @FindBy(xpath = ".//div[@class = 'header-bottom-in']//input[@class = 'quick-search-input']")
+    @FindBy(css = ".header-bottom-in .quick-search-input")
     private WebElement inputSearch;
-    @FindBy(xpath = ".//*[@class = 'actions-item actions-wish']")
+    @FindBy(css = ".actions-item a[href*='favorites/']")
     private WebElement buttonWishList;
 
     private String buttonLoyaltyProgram = "Програма лояльності";
