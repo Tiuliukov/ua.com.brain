@@ -9,16 +9,14 @@ import pages.elements.CartPopup;
 import pages.elements.HeaderElement;
 
 public class ProductPage extends ParentPage{
-    @FindBy(xpath = ".//h1")
+    @FindBy(css = "#br-pr-1 h1")
     private WebElement actualProductTitle;
     @FindBy(id = "product_code")
     private WebElement productCode;
-    @FindBy(xpath = ".//*[@class = 'br-del-pr']//button[@class = 'like-link']")
+    @FindBy(className = "like-link")
     private WebElement buttonWishList;
-    @FindBy(xpath = ".//*[@class = 'br-pr-cb main-order-block']")
+    @FindBy(className = "btn-add-green")
     private WebElement buttonAddToCart;
-    @FindBy(xpath = ".//*[@class = 'container br-container-main br-container-prt']")
-    private WebElement productContent;
 
     private String RelativeURL = "";
 
