@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends ParentPage{
-    @FindBy(xpath = ".//a[@class = 'clear-cart']")
+    @FindBy(className = "clear-cart")
     private WebElement buttonClearCart;
-    @FindBy(xpath = ".//*[@class = 'br-ci-name']//a[@class = 'to_product']")
+    @FindBy(css = ".br-ci-name .to_product")
     private WebElement actualProductTitle;
 
     public CartPage(WebDriver webDriver) {
