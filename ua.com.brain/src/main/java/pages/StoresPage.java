@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class StoresPage extends ParentPage{
-    @FindBy(xpath = ".//h1[@class='title']")
+    @FindBy(css = "h1.title")
     private WebElement storesPageTitle;
-    @FindBy(xpath = ".//button[@class = 'choice_city_button']")
+    @FindBy(className = "choice_city_button")
     private WebElement buttonChooseCity;
 
     public StoresPage(WebDriver webDriver) {
