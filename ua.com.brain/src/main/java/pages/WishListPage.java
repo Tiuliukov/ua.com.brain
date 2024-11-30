@@ -9,11 +9,11 @@ import org.openqa.selenium.support.FindBy;
 public class WishListPage extends ParentPage{
     @FindBy(className = "delete_all_favorites_btn")
     private WebElement buttonDeleteAllFavorites;
-    @FindBy(xpath = ".//*[@class = 'br-prof-p-title']//a")
+    @FindBy(css = ".br-prof-p-title a")
     private WebElement actualProductTitle;
-    @FindBy(xpath = ".//*[@class = 'br-wrap-block br-prof-top-block br-prof-fav']//h3")
+    @FindBy(css = ".br-prof-top-block h3")
     private WebElement titleWishListPage;
-    @FindBy(xpath = ".//*[@class = 'col-xs-12']//a[@href = '/ukr/cabinet/dashboard/']")
+    @FindBy(css = ".col-xs-12 a[href*='/ukr/cabinet/dashboard/']")
     private WebElement buttonCabinetDashboard;
 
 
