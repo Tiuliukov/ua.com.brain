@@ -15,6 +15,6 @@ target/site
 *.ipr
 *.iws
 .allure
-
+*/src/main/java/resources/hiddenConfig.properties
 
 target/allure-results
